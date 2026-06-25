@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FAQ — PlayStation 2 Hacks Guide</title>
-<meta name="description" content="PlayStation 2 Hacks Guide — FAQ.">
+<title>HDMI adapters — PlayStation 2 Hacks Guide</title>
+<meta name="description" content="PlayStation 2 Hacks Guide — HDMI adapters.">
 <link rel="icon" href="../images/favicon.ico"><style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#0a2a72;--accent2:#1565d8;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
@@ -114,7 +114,7 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="component.html">Component (YPbPr)</a>
 <a href="rgb-scart.html">RGB SCART</a>
 <a href="progressive-scan-gsm.html">Progressive scan &amp; GSM</a>
-<a href="hdmi-adapters.html">HDMI adapters</a>
+<a href="hdmi-adapters.html" class="active">HDMI adapters</a>
 <a href="480p-games.html">480p game list</a>
 <a href="av-troubleshooting.html">AV troubleshooting</a>
 <p class="sec">Storage, Network &amp; Region</p>
@@ -145,34 +145,28 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="ts-fan-noise.html">Loud fan</a>
 <a href="error-codes.html">Error messages</a>
 <p class="sec">Reference</p>
-<a href="faq.html" class="active">FAQ</a>
+<a href="faq.html">FAQ</a>
 <a href="tools-list.html">Tools &amp; software</a>
 <a href="compatibility-notes.html">Compatibility notes</a>
 <a href="credits.html">Credits &amp; sources</a></aside>
-<main class="content"><span class="badge">PlayStation 2</span><h1>FAQ</h1>
-<h2>Frequently Asked Questions</h2>
-<p>Common questions about softmodding and homebrew on the Sony PlayStation 2. If your question is not answered here, check the troubleshooting and compatibility reference pages.</p>
-<h3>Do I need to open my console or solder anything?</h3>
-<p>For most users, no. The popular methods today are entirely software based. FreeMcBoot, FreeDVDBoot, and MechaPwn require no soldering at all. Hardware modchips still exist, but they are seldom necessary for everyday homebrew and game backups.</p>
-<h3>Can I get banned or brick my console?</h3>
-<p>The PS2 has no online ban system, so account bans are not a concern. Bricking is uncommon with documented software methods, though flashing the Mechacon carries inherent risk. Follow each guide carefully and never interrupt a flash.</p>
-<h3>What is the difference between FreeMcBoot and FreeDVDBoot?</h3>
-<p>FreeMcBoot installs an exploit onto a memory card so homebrew launches automatically at boot. FreeDVDBoot instead loads an exploit from a burned disc or USB image. Newer slim consoles that resist FreeMcBoot can frequently use FreeDVDBoot or MechaPwn instead.</p>
-<h3>Which memory card should I buy?</h3>
-<p>A genuine Sony 8MB card is strongly recommended for FreeMcBoot. Many third party and fake cards behave unreliably and can corrupt the exploit installation. Capacity beyond 8MB is unnecessary for the boot files.</p>
-<h3>Do I still need original game discs?</h3>
-<p>You may only use backups of games you legally own. Open PS2 Loader can run titles from a USB drive, an internal or network drive, or SMB shares, which spares your original discs from wear.</p>
-<h3>Will USB loading be slow?</h3>
-<p>Stock USB on the PS2 is USB 1.1 and quite slow. Open PS2 Loader mitigates this with caching, and many users prefer loading from an internal HDD on fat models or over a network share for smoother performance.</p>
-<h3>What is MechaPwn and do I need it?</h3>
-<p>MechaPwn patches the Mechacon firmware, enabling features such as installing FreeMcBoot on otherwise locked consoles and changing the console region for video output. It is powerful but irreversible in part, so read warnings before flashing.</p>
-<h3>Can the slim PS2 run homebrew?</h3>
-<p>Yes. Slim models lack an internal HDD bay, but they support FreeMcBoot, FreeDVDBoot, MechaPwn, and USB or network loading through Open PS2 Loader, so they remain fully capable for homebrew.</p>
-<h3>What can I actually do once modded?</h3>
-<p>You can run emulators, media players, file managers like wLaunchELF, region free game loading, cheat applications such as PS2RD, and display tweaks via GSM. The console becomes a flexible homebrew and retro gaming platform.</p>
-<h3>Is any of this reversible?</h3>
-<p>Mostly yes. FreeMcBoot lives on a memory card and can simply be reformatted away. FreeDVDBoot leaves the console untouched. Mechacon level changes from MechaPwn are the main exception and should be treated as permanent.</p>
-<div class="pager"><a href="error-codes.html">&larr; Error messages</a><a href="tools-list.html">Tools &amp; software &rarr;</a></div>
+<main class="content"><span class="badge">PlayStation 2</span><h1>HDMI adapters</h1>
+<h2>HDMI Adapters and Digital Video Mods</h2>
+<p>The PlayStation 2 has no native HDMI output. Every channel on the multi-AV port is analog, so getting a clean digital signal to a modern television requires either an external converter or an internal modification. Both approaches have real trade-offs in quality, cost, and complexity.</p>
+<h3>Active component-to-HDMI adapters</h3>
+<p>The simplest path is a component (YPbPr) cable feeding an <strong>active</strong> converter box that digitizes the analog signal and outputs HDMI. Because component already carries the PS2's best analog picture, including 480p, a good converter can produce a respectable result on displays that lack analog inputs.</p>
+<div class="warn">
+<p>Cheap converters often add input lag, introduce noise, or fail to lock onto 480i correctly, producing dropouts. They also cannot add detail that the analog signal never had. Quality varies enormously between units, so choose one known to handle PS2 timings well.</p>
+</div>
+<h3>Internal digital-video mods</h3>
+<p>For the best possible image, internal mods tap the PS2's digital video signal before it is converted to analog and output it directly over HDMI. PS2DAC-type and similar projects read the Graphics Synthesizer's digital output, avoiding the analog-to-digital round trip entirely.</p>
+<ul>
+<li>Pixel-perfect digital output with no analog noise.</li>
+<li>Lower latency than most external converters.</li>
+<li>Requires opening the console and soldering to fine traces or test points.</li>
+<li>Compatibility depends on the specific console revision.</li>
+</ul>
+<p>Internal mods deliver the cleanest result but demand soldering skill and carry a risk of damaging the board. If you are not comfortable with delicate rework, an active component-to-HDMI adapter is the safer starting point.</p>
+<div class="pager"><a href="progressive-scan-gsm.html">&larr; Progressive scan &amp; GSM</a><a href="480p-games.html">480p game list &rarr;</a></div>
 </main></div></div>
 <footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
 </body></html>

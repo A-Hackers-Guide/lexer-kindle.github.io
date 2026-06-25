@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FAQ — PlayStation 2 Hacks Guide</title>
-<meta name="description" content="PlayStation 2 Hacks Guide — FAQ.">
+<title>Bootstrapping with FreeDVDBoot — PlayStation 2 Hacks Guide</title>
+<meta name="description" content="PlayStation 2 Hacks Guide — Bootstrapping with FreeDVDBoot.">
 <link rel="icon" href="../images/favicon.ico"><style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#0a2a72;--accent2:#1565d8;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
@@ -79,7 +79,7 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="methods-comparison.html">Methods compared</a>
 <p class="sec">Installation</p>
 <a href="install-precard.html">Using a pre-made FMCB card</a>
-<a href="install-via-freedvdboot.html">Bootstrapping with FreeDVDBoot</a>
+<a href="install-via-freedvdboot.html" class="active">Bootstrapping with FreeDVDBoot</a>
 <a href="installing-ps2bbl.html">Installing PS2BBL</a>
 <a href="installing-opentuna.html">Installing OpenTuna</a>
 <a href="first-boot.html">First-boot checklist</a>
@@ -145,34 +145,42 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="ts-fan-noise.html">Loud fan</a>
 <a href="error-codes.html">Error messages</a>
 <p class="sec">Reference</p>
-<a href="faq.html" class="active">FAQ</a>
+<a href="faq.html">FAQ</a>
 <a href="tools-list.html">Tools &amp; software</a>
 <a href="compatibility-notes.html">Compatibility notes</a>
 <a href="credits.html">Credits &amp; sources</a></aside>
-<main class="content"><span class="badge">PlayStation 2</span><h1>FAQ</h1>
-<h2>Frequently Asked Questions</h2>
-<p>Common questions about softmodding and homebrew on the Sony PlayStation 2. If your question is not answered here, check the troubleshooting and compatibility reference pages.</p>
-<h3>Do I need to open my console or solder anything?</h3>
-<p>For most users, no. The popular methods today are entirely software based. FreeMcBoot, FreeDVDBoot, and MechaPwn require no soldering at all. Hardware modchips still exist, but they are seldom necessary for everyday homebrew and game backups.</p>
-<h3>Can I get banned or brick my console?</h3>
-<p>The PS2 has no online ban system, so account bans are not a concern. Bricking is uncommon with documented software methods, though flashing the Mechacon carries inherent risk. Follow each guide carefully and never interrupt a flash.</p>
-<h3>What is the difference between FreeMcBoot and FreeDVDBoot?</h3>
-<p>FreeMcBoot installs an exploit onto a memory card so homebrew launches automatically at boot. FreeDVDBoot instead loads an exploit from a burned disc or USB image. Newer slim consoles that resist FreeMcBoot can frequently use FreeDVDBoot or MechaPwn instead.</p>
-<h3>Which memory card should I buy?</h3>
-<p>A genuine Sony 8MB card is strongly recommended for FreeMcBoot. Many third party and fake cards behave unreliably and can corrupt the exploit installation. Capacity beyond 8MB is unnecessary for the boot files.</p>
-<h3>Do I still need original game discs?</h3>
-<p>You may only use backups of games you legally own. Open PS2 Loader can run titles from a USB drive, an internal or network drive, or SMB shares, which spares your original discs from wear.</p>
-<h3>Will USB loading be slow?</h3>
-<p>Stock USB on the PS2 is USB 1.1 and quite slow. Open PS2 Loader mitigates this with caching, and many users prefer loading from an internal HDD on fat models or over a network share for smoother performance.</p>
-<h3>What is MechaPwn and do I need it?</h3>
-<p>MechaPwn patches the Mechacon firmware, enabling features such as installing FreeMcBoot on otherwise locked consoles and changing the console region for video output. It is powerful but irreversible in part, so read warnings before flashing.</p>
-<h3>Can the slim PS2 run homebrew?</h3>
-<p>Yes. Slim models lack an internal HDD bay, but they support FreeMcBoot, FreeDVDBoot, MechaPwn, and USB or network loading through Open PS2 Loader, so they remain fully capable for homebrew.</p>
-<h3>What can I actually do once modded?</h3>
-<p>You can run emulators, media players, file managers like wLaunchELF, region free game loading, cheat applications such as PS2RD, and display tweaks via GSM. The console becomes a flexible homebrew and retro gaming platform.</p>
-<h3>Is any of this reversible?</h3>
-<p>Mostly yes. FreeMcBoot lives on a memory card and can simply be reformatted away. FreeDVDBoot leaves the console untouched. Mechacon level changes from MechaPwn are the main exception and should be treated as permanent.</p>
-<div class="pager"><a href="error-codes.html">&larr; Error messages</a><a href="tools-list.html">Tools &amp; software &rarr;</a></div>
+<main class="content"><span class="badge">PlayStation 2</span><h1>Bootstrapping with FreeDVDBoot</h1>
+<div class="warn">
+  <p>FreeDVDBoot relies on a flaw in the console's built-in DVD player, so it only works on specific boot ROM versions. Confirm your console reports ROM <strong>2.30</strong> or <strong>2.50</strong> before burning anything. Use a fresh, good-quality DVD-R; cheap or rewritable media is a common cause of read failures.</p>
+</div>
+
+<h2>Bootstrapping from a disc</h2>
+<p>If you have no memory card exploit and no second console to copy files from, FreeDVDBoot gives you a way in using only a burned disc. It hijacks the DVD player software the moment a specially crafted video disc loads, then hands control to <strong>uLaunchELF</strong>, the file manager you will use to install a permanent launcher.</p>
+
+<h3>Checking your boot ROM</h3>
+<p>Open the system configuration screen and read the version line, or use a homebrew identifier on a friend's setup. Only ROM 2.30 and 2.50 are reliably exploitable through this method.</p>
+
+<ol class="phases">
+  <li>
+    <div class="t">Prepare the image</div>
+    <div class="d">Obtain the FreeDVDBoot disc image that matches your console's region and ROM, and place it on your computer.</div>
+  </li>
+  <li>
+    <div class="t">Burn the DVD-R</div>
+    <div class="d">Write the image to a blank DVD-R at a slow speed (4x or lower) to maximise read reliability on aging drives.</div>
+  </li>
+  <li>
+    <div class="t">Boot the disc</div>
+    <div class="d">Insert the disc and power on. The exploit triggers automatically and loads <strong>uLaunchELF</strong>. <span class="tag">file manager up</span></div>
+  </li>
+  <li>
+    <div class="t">Stage your files</div>
+    <div class="d">Use uLaunchELF to copy the installer for your chosen permanent launcher onto a memory card or USB drive.</div>
+  </li>
+</ol>
+
+<p>FreeDVDBoot itself is not permanent; it runs only while the disc is present. The point of this phase is to reach uLaunchELF so you can install <strong>PS2BBL</strong> or <strong>OpenTuna</strong> next, giving you a launcher that loads every time you power on.</p>
+<div class="pager"><a href="install-precard.html">&larr; Using a pre-made FMCB card</a><a href="installing-ps2bbl.html">Installing PS2BBL &rarr;</a></div>
 </main></div></div>
 <footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
 </body></html>

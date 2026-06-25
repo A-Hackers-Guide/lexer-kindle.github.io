@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FAQ — PlayStation 2 Hacks Guide</title>
-<meta name="description" content="PlayStation 2 Hacks Guide — FAQ.">
+<title>480p game list — PlayStation 2 Hacks Guide</title>
+<meta name="description" content="PlayStation 2 Hacks Guide — 480p game list.">
 <link rel="icon" href="../images/favicon.ico"><style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#0a2a72;--accent2:#1565d8;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
@@ -115,7 +115,7 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="rgb-scart.html">RGB SCART</a>
 <a href="progressive-scan-gsm.html">Progressive scan &amp; GSM</a>
 <a href="hdmi-adapters.html">HDMI adapters</a>
-<a href="480p-games.html">480p game list</a>
+<a href="480p-games.html" class="active">480p game list</a>
 <a href="av-troubleshooting.html">AV troubleshooting</a>
 <p class="sec">Storage, Network &amp; Region</p>
 <a href="hdd-overview.html">Internal HDD overview</a>
@@ -145,34 +145,28 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="ts-fan-noise.html">Loud fan</a>
 <a href="error-codes.html">Error messages</a>
 <p class="sec">Reference</p>
-<a href="faq.html" class="active">FAQ</a>
+<a href="faq.html">FAQ</a>
 <a href="tools-list.html">Tools &amp; software</a>
 <a href="compatibility-notes.html">Compatibility notes</a>
 <a href="credits.html">Credits &amp; sources</a></aside>
-<main class="content"><span class="badge">PlayStation 2</span><h1>FAQ</h1>
-<h2>Frequently Asked Questions</h2>
-<p>Common questions about softmodding and homebrew on the Sony PlayStation 2. If your question is not answered here, check the troubleshooting and compatibility reference pages.</p>
-<h3>Do I need to open my console or solder anything?</h3>
-<p>For most users, no. The popular methods today are entirely software based. FreeMcBoot, FreeDVDBoot, and MechaPwn require no soldering at all. Hardware modchips still exist, but they are seldom necessary for everyday homebrew and game backups.</p>
-<h3>Can I get banned or brick my console?</h3>
-<p>The PS2 has no online ban system, so account bans are not a concern. Bricking is uncommon with documented software methods, though flashing the Mechacon carries inherent risk. Follow each guide carefully and never interrupt a flash.</p>
-<h3>What is the difference between FreeMcBoot and FreeDVDBoot?</h3>
-<p>FreeMcBoot installs an exploit onto a memory card so homebrew launches automatically at boot. FreeDVDBoot instead loads an exploit from a burned disc or USB image. Newer slim consoles that resist FreeMcBoot can frequently use FreeDVDBoot or MechaPwn instead.</p>
-<h3>Which memory card should I buy?</h3>
-<p>A genuine Sony 8MB card is strongly recommended for FreeMcBoot. Many third party and fake cards behave unreliably and can corrupt the exploit installation. Capacity beyond 8MB is unnecessary for the boot files.</p>
-<h3>Do I still need original game discs?</h3>
-<p>You may only use backups of games you legally own. Open PS2 Loader can run titles from a USB drive, an internal or network drive, or SMB shares, which spares your original discs from wear.</p>
-<h3>Will USB loading be slow?</h3>
-<p>Stock USB on the PS2 is USB 1.1 and quite slow. Open PS2 Loader mitigates this with caching, and many users prefer loading from an internal HDD on fat models or over a network share for smoother performance.</p>
-<h3>What is MechaPwn and do I need it?</h3>
-<p>MechaPwn patches the Mechacon firmware, enabling features such as installing FreeMcBoot on otherwise locked consoles and changing the console region for video output. It is powerful but irreversible in part, so read warnings before flashing.</p>
-<h3>Can the slim PS2 run homebrew?</h3>
-<p>Yes. Slim models lack an internal HDD bay, but they support FreeMcBoot, FreeDVDBoot, MechaPwn, and USB or network loading through Open PS2 Loader, so they remain fully capable for homebrew.</p>
-<h3>What can I actually do once modded?</h3>
-<p>You can run emulators, media players, file managers like wLaunchELF, region free game loading, cheat applications such as PS2RD, and display tweaks via GSM. The console becomes a flexible homebrew and retro gaming platform.</p>
-<h3>Is any of this reversible?</h3>
-<p>Mostly yes. FreeMcBoot lives on a memory card and can simply be reformatted away. FreeDVDBoot leaves the console untouched. Mechacon level changes from MechaPwn are the main exception and should be treated as permanent.</p>
-<div class="pager"><a href="error-codes.html">&larr; Error messages</a><a href="tools-list.html">Tools &amp; software &rarr;</a></div>
+<main class="content"><span class="badge">PlayStation 2</span><h1>480p game list</h1>
+<h2>Games With Native Progressive (480p) Support</h2>
+<p>While the large majority of PlayStation 2 titles output only interlaced 480i, a meaningful number of games were programmed with a native <strong>progressive-scan (480p)</strong> mode. On these titles you do not need any homebrew or mode-forcing tool: the game itself drives the hardware in progressive, giving you the cleanest possible image straight from the disc over a component connection.</p>
+<h3>How native progressive is enabled</h3>
+<p>Each developer implemented progressive support differently, so there is no single universal toggle. Common methods include:</p>
+<ul>
+<li>A button prompt at boot, such as holding <strong>triangle and X</strong> while the game loads, after which it asks you to confirm progressive mode.</li>
+<li>An in-game display or video options menu with a 480p or "progressive scan" setting.</li>
+<li>Automatic detection on consoles configured for progressive output.</li>
+</ul>
+<div class="callout">
+<h2>Component is required</h2>
+<p>A native 480p signal can only travel over component (YPbPr) or an equivalent digital mod. Composite, S-Video, and standard RGB SCART will not carry it, so confirm your cable and TV input first.</p>
+</div>
+<h3>Finding compatible titles</h3>
+<p>Progressive support tends to appear in later, more graphically ambitious releases, and varies between the PAL and NTSC versions of the same game. Community-maintained compatibility lists are the most reliable reference, since support was decided per title rather than across the library.</p>
+<p>If a game you want lacks native progressive, a mode selector such as GSM can often force 480p output instead <span class="tag">fallback</span>, though with less guaranteed stability than a built-in progressive mode.</p>
+<div class="pager"><a href="hdmi-adapters.html">&larr; HDMI adapters</a><a href="av-troubleshooting.html">AV troubleshooting &rarr;</a></div>
 </main></div></div>
 <footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
 </body></html>
